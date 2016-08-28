@@ -1,0 +1,9 @@
+<h1>Add a new book to the store!</h1>
+
+<%= form_for @book do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit "Add To Store" %>
+<% end %>
