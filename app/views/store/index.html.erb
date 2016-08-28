@@ -4,6 +4,9 @@
 <% if @books.empty? %>
   <p>Add some books to the store!</p>
 <% else %>
+  <p>
+    <input id="search-books" type="text" placeholder="Search by Author" name="query">
+  </p>
   <table>
     <thead>
       <tr>
@@ -26,4 +29,5 @@
       <% end %>
     </tbody>
   </table>
+
 <% end %>
