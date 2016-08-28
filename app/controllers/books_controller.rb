@@ -5,6 +5,7 @@ class BooksController < ApplicationController
 
   def create
     book = Book.new(book_params)
+    book.location = Location.new(location_type: params[:book][:location])
     if book.save
       flash[:success] = "You've added #{book.title} to the store!"
       redirect_to root_path
