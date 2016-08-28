@@ -4,7 +4,14 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    book = Book.new(book_params)
+    if book.save
+      flash[:success] = "You've added #{book.title} to the store!"
+      redirect_to root_path
+    else
+      flash.now[:danger] = "There was a problem with your selection."
+      render new_book_path
+    end
   end
 
   private
