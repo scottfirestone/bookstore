@@ -1,0 +1,25 @@
+<h1>Firestone's Books</h1>
+<%= link_to "Add a new book", new_book_path %>
+
+<% if @books.empty? %>
+  <p>Add some books to the store!</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Stock Number</th>
+        <th>Book Title</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.id %></td>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
