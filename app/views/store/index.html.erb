@@ -10,6 +10,7 @@
         <th>Stock Number</th>
         <th>Book Title</th>
         <th>Author</th>
+        <th>Remove from Store</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
           <td><%= book.id %></td>
           <td><%= book.title %></td>
           <td><%= book.author %></td>
+          <td><%= link_to "Remove", book_path(book), method: :delete %></td>
         </tr>
       <% end %>
     </tbody>
